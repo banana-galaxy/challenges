@@ -1,0 +1,1 @@
+validate = lambda code:all([True if i==3 and str(code)[i]!=str(code)[i+1] else (True if str(code)[i]!=str(code)[i+1] and str(code)[i]!=str(code)[i+2] else False) for i,x in enumerate(str(code)[:4])]) if len(str(code)) == 5 and str(code).isdigit()==True else False
