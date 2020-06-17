@@ -1,0 +1,1 @@
+matrixSum = lambda _list: sum([sum([y if i == 0 else (y if all([u != 0 for u in [o[ii] for o in _list[:i]]]) else 0) for ii,y in enumerate(x)]) for i,x in enumerate(_list)])

@@ -1,0 +1,1 @@
+matrixSum = lambda matrix: sum(v for i, r in enumerate(matrix[::-1]) for n, v in enumerate(r) if not(any(x[n] == 0 for x in matrix[:(len(matrix)-1)-i]) and i != len(matrix)-1))
