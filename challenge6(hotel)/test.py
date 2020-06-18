@@ -1,6 +1,9 @@
-import os, random, json, testcases, time
+import os
+import testcases
+import time
 from check import matrixSum
-from operator import itemgetter
+
+# initializing variables
 start = time.time()
 files = os.listdir(os.path.dirname(os.path.realpath(__file__)))
 passs = 0
@@ -11,18 +14,17 @@ forbidden = ["testcases.py", "check.py", os.path.basename(__file__), "__pycache_
 for i in forbidden:
     if i in files:
         files.remove(i)
-amount = len(files)
 
+# generating test cases and assigning the correct answers
 checks = testcases.gen()
+print()
 outs = []
-print("storing correct test case results")
 for check in checks:
     outs.append(matrixSum(check))
 
-#keys = tests.keys()
 
+# testing
 wrong = []
-print("testing solutions")
 for index, f in enumerate(files):
     if f.endswith(".py"):
         starteff = time.time()
@@ -30,7 +32,7 @@ for index, f in enumerate(files):
         passed = True
         count = 0
         for i, x in enumerate(checks):
-            print(f"solution: {index+1}/{amount} testcase: {i+1}/{len(checks)}    ", end="\r")
+            print(f"solution: {index+1}/{len(files)} testcase: {i+1}/{len(checks)}    ", end="\r")
             if count < 1:
                 try:
                     if unit.matrixSum(x) != outs[i]:
@@ -45,13 +47,15 @@ for index, f in enumerate(files):
                 count = 0
                 break
         endeff = time.time()
-        efficient.append([f, endeff-starteff])
+        efficient.append([endeff-starteff, f])
         if passed:
             peeps.append(f.split('.')[0])
             passs += 1
         else:
             no_pass += 1
 end = time.time()
+
+# printing results and stats
 print("\n\n\n")
 for i in wrong:
     print(i)
@@ -61,12 +65,12 @@ for i in peeps:
 print(f"\npassed {passs}\nnot passed {no_pass}")
 
 print("\n\nStats:")
-print(f"\nComputation time: {end-start} seconds")
+print(f"\nComputation time: {end-start:.3f} seconds")
 print("\nEfficiency: ")
-for i in sorted(efficient, key=itemgetter(1)):
+for i in sorted(efficient):
     found = False
     for w in wrong:
-        if i[0].split(".")[0] in w:
+        if i[1].split(".")[0] in w:
             found = True
     if not found:
-        print(f"{i[1]:.4f} {i[0]}")
+        print(f"{i[0]:.4f} {i[1]}")
