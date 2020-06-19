@@ -1,6 +1,7 @@
 import os
 import testcases
 import time
+import copy
 from check import matrixSum
 
 # initializing variables
@@ -33,7 +34,7 @@ for index, f in enumerate(files):
         count = 0
         for i, x in enumerate(checks):
             print(f"solution: {index+1}/{len(files)} testcase: {i+1}/{len(checks)}    ", end="\r")
-            case = x.copy()
+            case = copy.deepcopy(x)
             if count < 1:
                 try:
                     if unit.matrixSum(case) != outs[i]:
