@@ -11,8 +11,7 @@ def gen(amount=100000):
         for i in range(height):
             case.append([])
             for room in range(width):
-                case[i].append(
-                    random.choice([0, random.randint(1, 100), random.randint(1, 1000), random.randint(1, 10000)]))
+                case[i].append(random.choice([0, random.randint(1, 100), random.randint(1, 1000), random.randint(1, 10000)]))
         testcases.append(case)
     return testcases
 
