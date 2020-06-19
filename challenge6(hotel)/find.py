@@ -22,7 +22,7 @@ for f in files:
     count = 0
     if f not in similar:
         for i, char in enumerate(f):
-            if i <= len(argv[0]) - 1:
+            if i <= len(argv[1]) - 1:
                 if char.lower() == argv[1][i].lower():
                     count += 1
         if count > 0:
