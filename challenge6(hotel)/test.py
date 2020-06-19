@@ -10,7 +10,7 @@ passs = 0
 no_pass = 0
 peeps = []
 efficient = []
-forbidden = ["testcases.py", "check.py", os.path.basename(__file__), "__pycache__"]
+forbidden = ["testcases.py", "check.py", os.path.basename(__file__), "__pycache__", "find.py"]
 for i in forbidden:
     if i in files:
         files.remove(i)
