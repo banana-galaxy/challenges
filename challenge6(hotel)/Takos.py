@@ -1,0 +1,1 @@
+matrixSum = lambda m:sum([sum(i[:(i.index(0)if 0 in i else len(i))])for i in[[m[j][i]for j in range(len(m))]for i in range(len(m[0]))]])
