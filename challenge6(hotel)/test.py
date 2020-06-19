@@ -33,11 +33,12 @@ for index, f in enumerate(files):
         count = 0
         for i, x in enumerate(checks):
             print(f"solution: {index+1}/{len(files)} testcase: {i+1}/{len(checks)}    ", end="\r")
+            case = x.copy()
             if count < 1:
                 try:
-                    if unit.matrixSum(x) != outs[i]:
+                    if unit.matrixSum(case) != outs[i]:
                         passed = False
-                        wrong.append(f"{f.split('.')[0]},{x} {outs[i]} {unit.matrixSum(x)}")
+                        wrong.append(f"{f.split('.')[0]},{x} {outs[i]} {unit.matrixSum(case)}")
                         count += 1
                 except BaseException as e:
                     passed = False
