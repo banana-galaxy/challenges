@@ -1,0 +1,1 @@
+year_to_century = lambda year : int(year/100)

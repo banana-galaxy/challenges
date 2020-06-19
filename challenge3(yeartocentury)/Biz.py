@@ -1,0 +1,1 @@
+yearToCentury = lambda cent: ((cent - 1) // 100) + 1
