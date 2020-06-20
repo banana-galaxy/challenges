@@ -36,11 +36,11 @@ for index, f in enumerate(files):
                 try:
                     if unit.matrixSum(case) != outs[i]:
                         passed = False
-                        wrong.append(f"{f.split('.')[0]},{x} {outs[i]} {unit.matrixSum(case)}")
+                        wrong.append(f"\n{f.split('.')[0]}\ntest:{x}\nsolution output:{unit.matrixSum(case)}\ncorrect output:{outs[i]}")
                         count += 1
                 except BaseException as e:
                     passed = False
-                    wrong.append(f"{f.split('.')[0]},{x} {outs[i]} {e}")
+                    wrong.append(f"\n{f.split('.')[0]}\ntest:{x}\nerror:{e}\ncorrect output:{outs[i]}")
                     count += 1
             else:
                 count = 0
@@ -59,4 +59,33 @@ for i in wrong:
 print("\nWinners (sorted by code efficiency): ")
 for i in sorted(winners):
     print(f"{i[0]:.2f} {i[1]}")
+
+# shortest solution
+shortest = ""
+solutions = []
+for sol in winners:
+    sol = f"{sol[1]}.py"
+    with open(sol) as f:
+        solutions.append([f.read(), sol])
+for i, sol in enumerate(solutions):
+    if i == 0:
+        chars = len(sol[0])
+        shortest = sol[1]
+        continue
+    if len(sol[0]) < chars:
+        chars = len(sol[0])
+        shortest = sol[1]
+short = []
+for i, sol in enumerate(solutions):
+    if len(sol[0]) == chars and shortest != sol[1]:
+        if short == []:
+            short.append(shortest)
+        short.append(sol[1])
+if short == []:
+    print(f"\nshortest solution: {shortest.split('.')[0]}")
+else:
+    print(f"\nshortest solutions:")
+    for i in short:
+        print(i.split('.')[0])
+
 print(f"\nComputation time: {end-start:.3f} seconds")
