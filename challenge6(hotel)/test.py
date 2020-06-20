@@ -7,10 +7,7 @@ from check import matrixSum
 # initializing variables
 start = time.time()
 files = os.listdir(os.path.dirname(os.path.realpath(__file__)))
-passs = 0
-no_pass = 0
-peeps = []
-efficient = []
+winners = []
 forbidden = ["testcases.py", "check.py", os.path.basename(__file__), "__pycache__", "find.py"]
 for i in forbidden:
     if i in files:
@@ -33,7 +30,7 @@ for index, f in enumerate(files):
         passed = True
         count = 0
         for i, x in enumerate(checks):
-            print(f"solution: {index+1}/{len(files)} testcase: {i+1}/{len(checks)}    ", end="\r")
+            print(f"solution: {index+1}/{len(files)} testcase: {i+1}/{len(checks)}  passed:{len(winners)} failed:{len(wrong)}    ", end="\r")
             case = copy.deepcopy(x)
             if count < 1:
                 try:
@@ -49,30 +46,17 @@ for index, f in enumerate(files):
                 count = 0
                 break
         endeff = time.time()
-        efficient.append([endeff-starteff, f])
         if passed:
-            peeps.append(f.split('.')[0])
-            passs += 1
-        else:
-            no_pass += 1
+            winners.append([endeff - starteff, f.split('.')[0]])
+        print(f"solution: {index + 1}/{len(files)} testcase: {i + 1}/{len(checks)}  passed:{len(winners)} failed:{len(wrong)}    ",end="\r")
 end = time.time()
 
-# printing results and stats
-print("\n\n\n")
+# printing results
+print("\n\n\nfailed tests:")
 for i in wrong:
     print(i)
-print("\n\n\nresults:\n")
-for i in peeps:
-    print(i)
-print(f"\npassed {passs}\nnot passed {no_pass}")
 
-print("\n\nStats:")
+print("\nWinners (sorted by code efficiency): ")
+for i in sorted(winners):
+    print(f"{i[0]:.2f} {i[1]}")
 print(f"\nComputation time: {end-start:.3f} seconds")
-print("\nEfficiency: ")
-for i in sorted(efficient):
-    found = False
-    for w in wrong:
-        if i[1].split(".")[0] in w:
-            found = True
-    if not found:
-        print(f"{i[0]:.4f} {i[1]}")
