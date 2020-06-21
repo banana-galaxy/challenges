@@ -2,13 +2,23 @@ import os
 import testcases
 import time
 import copy
+from termcolor import colored
 from check import matrixSum
+import sys
+
+# Disable print
+def disablePrint():
+    sys.stdout = open(os.devnull, 'w')
+
+# Restore print
+def enablePrint():
+    sys.stdout = sys.__stdout__
 
 # initializing variables
 start = time.time()
 files = os.listdir(os.path.dirname(os.path.realpath(__file__)))
 winners = []
-forbidden = ["testcases.py", "check.py", os.path.basename(__file__), "__pycache__", "find.py"]
+forbidden = ["testcases.py", "check.py", os.path.basename(__file__), "__pycache__", "find.py", "testing.py"]
 for i in forbidden:
     if i in files:
         files.remove(i)
@@ -30,15 +40,19 @@ for index, f in enumerate(files):
         passed = True
         count = 0
         for i, x in enumerate(checks):
-            print(f"solution: {index+1}/{len(files)} testcase: {i+1}/{len(checks)}  passed:{len(winners)} failed:{len(wrong)}    ", end="\r")
+            print(f"solution: {index+1}/{len(files)} testcase: {i+1}/{len(checks)}  passed:{len(winners)} failed:{len(wrong)}", " "*len(str(len(checks))), end="\r")
             case = copy.deepcopy(x)
             if count < 1:
                 try:
-                    if unit.matrixSum(case) != outs[i]:
+                    disablePrint()
+                    output = unit.matrixSum(case)
+                    enablePrint()
+                    if output != outs[i]:
                         passed = False
-                        wrong.append(f"\n{f.split('.')[0]}\ntest:{x}\nsolution output:{unit.matrixSum(case)}\ncorrect output:{outs[i]}")
+                        wrong.append(f"\n{f.split('.')[0]}\ntest:{x}\nsolution output:{output}\ncorrect output:{outs[i]}")
                         count += 1
                 except BaseException as e:
+                    enablePrint()
                     passed = False
                     wrong.append(f"\n{f.split('.')[0]}\ntest:{x}\nerror:{e}\ncorrect output:{outs[i]}")
                     count += 1
@@ -48,17 +62,17 @@ for index, f in enumerate(files):
         endeff = time.time()
         if passed:
             winners.append([endeff - starteff, f.split('.')[0]])
-        print(f"solution: {index + 1}/{len(files)} testcase: {i + 1}/{len(checks)}  passed:{len(winners)} failed:{len(wrong)}    ",end="\r")
+print(f"solution: {index + 1}/{len(files)} testcase: {i + 1}/{len(checks)}  passed:{len(winners)} failed:{len(wrong)}", " "*len(str(len(checks))), end="\r")
 end = time.time()
 
 # printing results
-print("\n\n\nfailed tests:")
+print("\n\n\nFailed tests:")
 for i in wrong:
     print(i)
 
-print("\nWinners (sorted by code efficiency): ")
+print("\n\nWinners (sorted by code efficiency): ")
 for i in sorted(winners):
-    print(f"{i[0]:.2f} {i[1]}")
+    print(colored(f"{i[0]:.2f}","white"), f"{i[1]}")
 
 # shortest solution
 shortest = ""
