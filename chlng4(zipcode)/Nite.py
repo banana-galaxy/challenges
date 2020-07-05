@@ -1,1 +1,0 @@
-checkPostal = lambda postal : len(str(postal)) == 5 and int(postal) == postal and all([str(postal)[i] != str(postal)[i+1] for i in range(4)]) 

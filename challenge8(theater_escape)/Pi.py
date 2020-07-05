@@ -1,0 +1,1 @@
+whichExit=lambda t:'left'if s(t[P(t)][:p(t)])<s(t[P(t)][p(t):])else'right'if s(t[P(t)][:p(t)])>s(t[P(t)][p(t):])else'same';s=lambda S:S.count(1);P=lambda t:[0 in R for R in t].index(1);p=lambda t:t[P(t)].index(0)

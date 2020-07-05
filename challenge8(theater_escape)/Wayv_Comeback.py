@@ -1,0 +1,1 @@
+whichExit = lambda m : ('same', 'right', 'left')[[(lambda x: x and (1, -1)[x<0])(r[:r.index(0)].count(1) - r[r.index(0)+1:].count(1)) for r in m if 0 in r][0]]

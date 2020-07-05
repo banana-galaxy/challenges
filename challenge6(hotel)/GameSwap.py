@@ -6,4 +6,4 @@ def matrixSum(matrix):
                 break
             else:
                 sum += array[j]
-    #print(sum)
+    print(sum)

@@ -1,13 +1,13 @@
 import random
 
 
-def gen(amount=100000):
+def gen(amount=50000):
     testcases = []
     for o in range(amount):  # amount of test cases
         print(f"generating cases {o + 1}/{amount}", end="\r")
         case = []
-        height = random.randint(1, 7)
-        width = random.randint(1, 7)
+        height = random.randint(1, 10)
+        width = random.randint(1, 10)
         for i in range(height):
             case.append([])
             for room in range(width):

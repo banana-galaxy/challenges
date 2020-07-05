@@ -1,0 +1,1 @@
+def whichExit(m):t=[sum(1for p in r[:r.index(0)]if p==1)-sum(1for p in r[r.index(0)+1:]if p==1)for r in m if 0 in r][0];return'same'if t==0else('left'if t<0else'right')
