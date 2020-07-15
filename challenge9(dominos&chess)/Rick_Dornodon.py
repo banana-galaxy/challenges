@@ -1,0 +1,1 @@
+fill=lambda m:not(sum([(1-i)*((r+c)%2*2-1)for r,_ in enumerate(m)for c,i in enumerate(_)]))
