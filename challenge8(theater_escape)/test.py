@@ -5,6 +5,8 @@ import copy
 from termcolor import colored
 from check import whichExit
 import sys
+import update_board
+from pathlib import Path
 
 # Disable print
 def disablePrint():
@@ -103,3 +105,15 @@ else:
         print(i.split('.')[0])
 
 print(f"\nComputation time: {end-start:.3f} seconds")
+
+usr = input("\n\nUpdate leaderboard? [Y/n] ")
+if usr.lower() != "n":
+    file = os.path.join(Path(os.path.dirname(os.path.realpath(__file__))).parent, "data.json")
+    for i in winners:
+        update_board.won(file, i[1], 8)
+    for i in wrong:
+        i = i.split("\n")[1]
+        update_board.lost(file, i, 8)
+    print("leaderboard updated")
+else:
+    print("leaderboard stays as is")

@@ -1,4 +1,6 @@
-'''import os, infernus, random, json
+import os, infernus, random, json
+import update_board
+from pathlib import Path
 
 files = os.listdir(os.path.dirname(os.path.realpath(__file__)))
 passs = 0
@@ -42,6 +44,17 @@ print("\n\n\nresults:\n")
 for i in peeps:
     print(i)
 print(f"passed {passs}\nnot passed {no_pass}")
+
+usr = input("\n\nUpdate leaderboard? [Y/n] ")
+if usr.lower() != "n":
+    file = os.path.join(Path(os.path.dirname(os.path.realpath(__file__))).parent, "data.json")
+    for i in peeps:
+        update_board.won(file, i, 3)
+    # for i in failed:
+    #     update_board.lost(file, i, 1)
+    print("leaderboard updated")
+else:
+    print("leaderboard stays as is")
 '''
 
 import json
@@ -51,4 +64,4 @@ with open("first.json") as f:
     first = json.load(f)
 for x in second:
     if x not in first:
-        print(x)
+        print(x)'''

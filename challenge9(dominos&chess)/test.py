@@ -5,7 +5,8 @@ import copy
 from termcolor import colored
 from check import fill, fill2
 import sys
-import importlib
+import update_board
+from pathlib import Path
 
 # Disable print
 def disablePrint():
@@ -119,3 +120,15 @@ try:
     print(f"\nComputation time: {end-start:.3f} seconds")
 except KeyboardInterrupt:
     print("\nAborted")
+
+usr = input("\n\nUpdate leaderboard? [Y/n] ")
+if usr.lower() != "n":
+    file = os.path.join(Path(os.path.dirname(os.path.realpath(__file__))).parent, "data.json")
+    for i in winners:
+        update_board.won(file, i[1], 9)
+    for i in wrong:
+        i = i.split("\n")[1]
+        update_board.lost(file, i, 9)
+    print("leaderboard updated")
+else:
+    print("leaderboard stays as is")

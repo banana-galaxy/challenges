@@ -1,4 +1,6 @@
 import os, random, json, time
+import update_board
+from pathlib import Path
 start = time.time()
 files = os.listdir(os.path.dirname(os.path.realpath(__file__)))
 passs = 0
@@ -108,3 +110,14 @@ for i in peeps:
     print(i)
 print(f"\npassed {passs}\nnot passed {no_pass}")
 print(f"Computation time: {end-start} seconds")
+
+usr = input("\n\nUpdate leaderboard? [Y/n] ")
+if usr.lower() != "n":
+    file = os.path.join(Path(os.path.dirname(os.path.realpath(__file__))).parent, "data.json")
+    for i in peeps:
+        update_board.won(file, i, 5)
+    for i in wrong:
+        update_board.lost(file, i.split(',')[0], 5)
+    print("leaderboard updated")
+else:
+    print("leaderboard stays as is")
