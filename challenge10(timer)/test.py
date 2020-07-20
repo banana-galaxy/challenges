@@ -95,11 +95,11 @@ print("\n\n\nFailed tests:")
 for i in wrong:
     print(i)
 
+# winner solutions by efficiency first, then by length
 print("\n\nWinners\nsorted by code efficiency: ")
 for i in sorted(winners):
     print(colored(f"{i[0]:.2f}","white"), f"{i[1]}")
 
-# shortest solution
 shortest = ""
 solutions = []
 for sol in winners:
@@ -120,8 +120,6 @@ while len(short) < len(solutions):
         if len(sol[0]) == chars:
             short.append([len(sol[0]), sol[1]])
     chars+=1
-'''for i in solutions:
-    for sol in solutions:'''
 
 
 print(f"\nsorted by code length:")
