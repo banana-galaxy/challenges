@@ -21,5 +21,5 @@ values = list(data.values())
 fig, ax = plt.subplots()
 ax.bar(names, values)
 
-plt.xticks(rotation=70)
+plt.xticks(rotation=80)
 plt.show()
