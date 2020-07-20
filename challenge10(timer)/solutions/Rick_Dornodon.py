@@ -1,0 +1,1 @@
+lateRide=lambda x:sum(map(int,f'{x//60}{x%60}'))

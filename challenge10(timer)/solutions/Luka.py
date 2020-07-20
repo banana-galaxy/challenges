@@ -1,0 +1,1 @@
+def lateRide(t):h=t//60;m=t%60;return sum(int(i) for i in str(h)+str(m))

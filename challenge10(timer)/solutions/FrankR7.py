@@ -1,0 +1,1 @@
+lateRide=lambda n:sum([int(i)for i in f"{n-int(n/60)*60}"])+sum([int(j)for j in f"{int(n/60)}"])

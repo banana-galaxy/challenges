@@ -1,0 +1,1 @@
+lateRide = lambda n : sum(int(s) for s in str(n // 60)) + sum(int(s) for s in str(n % 60))
