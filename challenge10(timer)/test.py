@@ -49,10 +49,7 @@ try:
             except BaseException as e:
                 wrong.append(f"\n{f.split('.')[0]}\nerror during interpretation: {e}")
                 continue
-            passed = True
-            ii=0
             for i, x in enumerate(checks):
-                ii = i
                 print(f"solution: {index+1}/{len(files)} testcase: {i+1}/{len(checks)}  passed:{len(winners)} failed:{len(wrong)}", " "*len(str(len(checks))), end="\r")
                 case = copy.deepcopy(x)
                 try:
@@ -60,16 +57,14 @@ try:
                     output = unit.lateRide(case)
                     enablePrint()
                     if output != outs[i]:
-                        passed = False
                         wrong.append(f"\n{f.split('.')[0]}\ntest:{x}\nsolution output:{output}\ncorrect output:{outs[i]}")
                         break
                 except BaseException as e:
                     enablePrint()
-                    passed = False
                     wrong.append(f"\n{f.split('.')[0]}\ntest:{x}\nerror:{e}\ncorrect output:{outs[i]}")
                     break
-            endeff = time.time()
-            if passed:
+            else:
+                endeff = time.time()
                 winners.append([endeff - starteff, f.split('.')[0]])
     print(f"solution: {index + 1}/{len(files)} testcase: {i + 1}/{len(checks)}  passed:{len(winners)} failed:{len(wrong)}", " "*len(str(len(checks))), end="\r")
     end = time.time()
