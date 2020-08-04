@@ -1,0 +1,1 @@
+solution=lambda w,p,q,l=["sun","mon","tues","wednes","thurs","fri","satur"],i=int:l[(l.index(w.lower()[:-3])-1*(i(p[:2])-i(q[:2])+(i(p[3:])-i(q[3:]))*30))%7]+'day'

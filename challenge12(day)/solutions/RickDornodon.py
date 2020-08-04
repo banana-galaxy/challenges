@@ -1,0 +1,1 @@
+_=int;w='Mon Tues Wednes Thurs Fri Satur Sun'.split();solution=lambda s,n,o:w[(w.index(s[:-3].title())+(_(o[3:])-_(n[3:]))*30+_(o[:2])-_(n[:2]))%7]+'day'

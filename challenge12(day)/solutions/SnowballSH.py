@@ -1,0 +1,1 @@
+def solution(a,b,c):o=["monday","tuesday","wednesday","thursday","friday","saturday","sunday"];x,X,y,Y=map(int,(b+"/"+c).split("/"));return o[((o.index(a.lower()))+(Y-X)*30+y-x)%7]

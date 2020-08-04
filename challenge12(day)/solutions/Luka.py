@@ -1,0 +1,1 @@
+def solution(d,t,T):N=["monday","tuesday","wednesday","thursday","friday","saturday","sunday"];s,m=t.split("/");S,M=T.split("/");return N[(N.index(d.lower())+int(S)-int(s)+(int(M)-int(m))*30)%7]
