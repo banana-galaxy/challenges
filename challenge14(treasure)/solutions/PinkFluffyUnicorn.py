@@ -1,0 +1,1 @@
+solution=lambda a,b,c,d,e:a+c if b+d<=e else 0 if b>e and d>e else a if (a>c and b<=e)or d>e else c

@@ -1,0 +1,1 @@
+solution=lambda v,w,V,W,m:max((w<=m)*v,(W<=m)*V,(w+W<=m)*(v+V))

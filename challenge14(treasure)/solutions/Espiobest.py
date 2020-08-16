@@ -1,0 +1,1 @@
+solution=lambda a,b,c,d,e:max((b<=e,a),(d<=e,c),(b+d<=e,a+c),(1,0))[1]

@@ -1,0 +1,1 @@
+solution=lambda a,b,c,d,e:(((c,a)[(b<=e)&(a>c)|(d>e>=b)],a+c)[e>=b+d],0)[(b>e)&(d>e)]

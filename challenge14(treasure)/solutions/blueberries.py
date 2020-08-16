@@ -1,0 +1,1 @@
+solution=lambda v,w,V,W,m:(v+V,((max(v,V),v)[W>m],(V,0)[W>m])[w>m])[w+W>m]

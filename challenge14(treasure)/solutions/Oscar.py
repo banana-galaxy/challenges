@@ -1,0 +1,1 @@
+solution=lambda v,w,V,W,m:v+V if w+W<=m else max(v,V)if max(w,W)<=m else 0 if min(w,W)>m else v if W>m and w<=m else V 

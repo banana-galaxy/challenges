@@ -1,0 +1,1 @@
+solution=lambda a,b,c,d,e:(0 if e<min([b,d])else{b:a,d:c}[max(n for n in[b,d]if n<=e)],a+c)[e>=b+d]

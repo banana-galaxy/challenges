@@ -1,0 +1,1 @@
+solution=lambda v,w,V,W,m:[i for i,j in sorted([(0,0),(v,w),(V,W),(v+V,w+W)]) if j<=m][-1]

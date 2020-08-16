@@ -1,0 +1,1 @@
+solution=lambda v,w,V,W,m:max(zip((w<=m,W<=m,w+W<=m,1),(v,V,v+V,0)))[1]

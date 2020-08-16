@@ -1,0 +1,1 @@
+def solution(a,b,c,d,m):return max((b<=m)*a,(d<=m)*c,(a+c)*(b+d<=m))
