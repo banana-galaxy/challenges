@@ -1,0 +1,1 @@
+def solution(s):d=sorted(dict.fromkeys(l:=s.split()),key=l.count,reverse=1);return' '.join(str(d.index(i)+1)for i in l)

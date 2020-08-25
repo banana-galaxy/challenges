@@ -1,0 +1,1 @@
+def solution(s):b=s.split();d={w:-b.count(w)for w in b};c=sorted(d,key=d.get);return' '.join(str(1+c.index(w))for w in b)

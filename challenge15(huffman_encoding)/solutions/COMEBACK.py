@@ -1,0 +1,1 @@
+solution=lambda s:' '.join([f'{list(dict.fromkeys(sorted(s.split(),reverse=1,key=lambda y:s.split().count(y))).keys()).index(i)+1}'for i in s.split()])

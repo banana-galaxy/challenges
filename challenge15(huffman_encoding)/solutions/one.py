@@ -1,0 +1,1 @@
+def solution(t):t=t.split();return' '.join(str(list({}.fromkeys(sorted(t,key=lambda y:-t.count(y)))).index(i)+1)for i in t)

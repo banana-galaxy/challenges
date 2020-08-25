@@ -1,0 +1,1 @@
+solution=lambda a:" ".join([str([p[0]for p in sorted({x:a.split().count(x)for x in a.split()}.items(),key=lambda i:i[1],reverse=1)].index(i)+1)for i in a.split()])
