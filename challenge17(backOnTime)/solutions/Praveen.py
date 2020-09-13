@@ -1,0 +1,1 @@
+solution=lambda l:len(l)<=10 and l.count('n')==l.count('s') and l.count('e')==l.count('w')

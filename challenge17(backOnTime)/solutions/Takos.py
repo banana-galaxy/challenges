@@ -1,0 +1,1 @@
+solution=lambda a:sum(b:=[*map(a.count,"nesw")])<11!=b[:2]==b[2:]

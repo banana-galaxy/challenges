@@ -1,0 +1,1 @@
+solution=lambda x:[28,30,31]if x>30 else[31]

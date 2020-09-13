@@ -1,0 +1,1 @@
+solution=lambda l:(sum(k:=[*map(l.count,'nwse')])<11)*k[:2]==k[2:]

@@ -1,0 +1,1 @@
+def solution(q):return[28,30]*(q==31)+[31]

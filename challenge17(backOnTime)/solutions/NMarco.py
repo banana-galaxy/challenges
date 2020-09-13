@@ -1,0 +1,1 @@
+solution = lambda i:all([len(i)<=10,i.count('s')==i.count('n'), i.count('e')==i.count('w')])

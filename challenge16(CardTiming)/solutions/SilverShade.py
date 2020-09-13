@@ -1,0 +1,1 @@
+solution=lambda x:[28,30,31][(x>30)-1:]

@@ -1,0 +1,1 @@
+def solution(a):b,c,d,e=map(a.count,"ewns");return b^c<(c+d<6)>d^e

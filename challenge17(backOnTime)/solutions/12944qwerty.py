@@ -1,0 +1,1 @@
+solution=lambda a:(len(a)<11)*[*map(b:=a.count,"ne")]==[*map(b,"sw")]

@@ -1,0 +1,1 @@
+solution=lambda x:len(x)<11and x.count('n')==x.count('s')and x.count('w')==x.count('e')

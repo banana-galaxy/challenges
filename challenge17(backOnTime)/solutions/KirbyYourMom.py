@@ -1,0 +1,1 @@
+def solution(x):_=x.count;return len(x)<11and _('n')==_('s')and _('e')==_('w')

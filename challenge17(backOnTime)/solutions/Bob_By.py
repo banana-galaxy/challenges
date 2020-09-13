@@ -1,0 +1,1 @@
+solution=lambda x:False if x.count('n')!=x.count('s')or x.count('e')!=x.count('w')or len(x)>10else True

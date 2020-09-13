@@ -1,0 +1,1 @@
+solution=lambda x:11>sum(s:=[*map(x.count,"nwse")])!=s[:2]==s[2:]

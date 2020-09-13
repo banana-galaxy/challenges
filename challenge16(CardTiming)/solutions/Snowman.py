@@ -1,0 +1,1 @@
+solution=lambda a:[31]if a<31 else[28,30,31]

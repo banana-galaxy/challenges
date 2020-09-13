@@ -1,0 +1,1 @@
+solution=lambda d:[28,30,31][-(d!=31):]

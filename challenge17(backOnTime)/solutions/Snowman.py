@@ -1,0 +1,1 @@
+solution=lambda a: True if len(a) < 11 and a.count("n") == a.count("s") and a.count("e") == a.count("w") else False

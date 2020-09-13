@@ -1,0 +1,1 @@
+def solution(a):b=a.count;return len(a)<11*(b('n')==b('s'))*(b('e')==b('w'))

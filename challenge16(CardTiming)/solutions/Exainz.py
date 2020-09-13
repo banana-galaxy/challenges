@@ -1,0 +1,1 @@
+solution=lambda n:[31]if n<31else[28,30,n]

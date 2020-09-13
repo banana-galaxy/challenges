@@ -1,0 +1,1 @@
+solution=lambda l:not(l[:-10]or sum(('ne ws'.index(c)-2)**5for c in l))

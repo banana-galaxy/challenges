@@ -1,0 +1,1 @@
+solution = lambda i: [28,30,31] if i == 31 else [31]

@@ -1,0 +1,1 @@
+def solution(a):w,e,s,n=map(a.count,'wesn');return e^w<(w+n<6)>n^s

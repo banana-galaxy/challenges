@@ -1,0 +1,1 @@
+solution=lambda l:not any([l.count("n")-l.count("s"),l.count("w")-l.count("e")])and len(l)<11

@@ -1,0 +1,1 @@
+solution=lambda i:([31],[28,30,i])[i%2]

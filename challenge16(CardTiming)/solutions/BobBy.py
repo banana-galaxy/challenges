@@ -1,0 +1,1 @@
+def solution(x):return[28,30,31]if x>30else[31]
