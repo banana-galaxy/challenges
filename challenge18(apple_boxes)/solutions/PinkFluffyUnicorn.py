@@ -1,0 +1,1 @@
+solution=lambda k:int(k*(k/2+0.5)*(k%2and-1or 1))

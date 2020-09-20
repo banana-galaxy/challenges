@@ -1,0 +1,1 @@
+solution=lambda k:(n:=k//2)*2*n+n-k*k*(k%2)

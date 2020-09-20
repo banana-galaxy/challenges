@@ -1,0 +1,1 @@
+solution=lambda k:sum([-x*x if x%2else x*x for x in range(k+1)])

@@ -1,0 +1,1 @@
+solution=lambda k:-sum(range(k+1))if k%2else sum(range(k+1))

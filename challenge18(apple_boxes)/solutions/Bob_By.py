@@ -1,0 +1,1 @@
+solution=lambda a:a*(a+1)//2*(-1)**a

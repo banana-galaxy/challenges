@@ -1,0 +1,1 @@
+solution=lambda k:int(((-1)**k*(k*(k+1)))/2)

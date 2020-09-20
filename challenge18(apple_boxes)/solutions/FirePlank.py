@@ -1,0 +1,1 @@
+solution=lambda k:(k*(k+1))//-2if k&1else(k*(k+1))//2
