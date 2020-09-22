@@ -1,11 +1,10 @@
 import random
-import string
+from check import solution
 
 def gen(amount=50000):
     testcases = []
     primes = []
     count = 0
-    # solution function
     while len(primes)<100:
         if solution(count):
             primes.append(count)
