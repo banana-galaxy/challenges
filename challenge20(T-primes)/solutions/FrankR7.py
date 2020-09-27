@@ -1,0 +1,1 @@
+solution=lambda k:sum([1if k/x==x else 2for x in range(1,int(k**0.5)+1,2)if k%x==0])==3if k!=4else 1

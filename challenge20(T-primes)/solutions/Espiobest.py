@@ -1,0 +1,1 @@
+solution=lambda x:1if x==4or(x>x%2>0and int(y:=x**.5)==y and all(x%i for i in range(3,int(x**.25)+1,2)))else 0

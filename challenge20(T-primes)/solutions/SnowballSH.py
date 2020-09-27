@@ -1,0 +1,1 @@
+solution=lambda n:all(n%i for i in range(2,int(n**.5)+1))if(n:=n**.5)==int(n)and n>1else 0

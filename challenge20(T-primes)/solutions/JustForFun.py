@@ -1,0 +1,1 @@
+solution=lambda n:all(k%i for i in range(2,int(k**.5)+1))if(k:=n**.5)==k//1<n else 0

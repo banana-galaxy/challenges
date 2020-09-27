@@ -1,0 +1,1 @@
+solution=lambda x:(z:=x**.5)==int(z)>1==all(z%y for y in range(2,int(z**.5)+1))

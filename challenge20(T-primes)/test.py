@@ -68,12 +68,16 @@ try:
             ii=0
             for i, x in enumerate(checks):
                 delta = time.time() - starteff
+                print(
+                    f"solution: {index + 1}/{len(files)} testcase: {i + 1}/{len(checks)} runtime:{int(delta)}  passed:{len(winners)} failed:{len(wrong)}",
+                    " " * len(str(len(checks))), end="\r")
                 if delta > 60:
+                    time.sleep(0.2)
                     passed = False
                     wrong.append(f"\n{f.split('.')[0]}\ntest:{x}\nsolution was too slow\ncorrect output:{outs[i]}")
                     break
                 ii = i
-                print(f"solution: {index+1}/{len(files)} testcase: {i+1}/{len(checks)}  passed:{len(winners)} failed:{len(wrong)}", " "*len(str(len(checks))), end="\r")
+
                 case = copy.deepcopy(x)
                 try:
                     disablePrint()

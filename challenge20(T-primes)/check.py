@@ -1,0 +1,1 @@
+solution = lambda n: (int(k := n ** .5) == k * all(k % i for i in range(2, int(k ** .5) + 1))) * n > 1

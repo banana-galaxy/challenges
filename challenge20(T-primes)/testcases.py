@@ -5,16 +5,16 @@ def gen(amount=50000):
     testcases = []
     primes = []
     count = 0
-    while len(primes)<100:
+    while len(primes)<50:
         if solution(count):
             primes.append(count)
         count += random.randint(1, 10)
-        print(f"getting some T-primes for the generator {len(primes)}/100", end='\r')
+        print(f"getting some T-primes for the generator {len(primes)}/50", end='\r')
     print()
 
     for o in range(amount):  # amount of test cases
         print(f"generating cases {o + 1}/{amount}", end="\r")
-        case = random.choice([random.choice(primes), random.randint(0,1000000000), random.randint(0, 2)])
+        case = random.choice([random.choice(primes), random.randint(0,1000000), random.randint(0, 2)])
         testcases.append(case)
     return testcases
 
