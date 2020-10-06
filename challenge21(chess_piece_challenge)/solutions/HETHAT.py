@@ -1,0 +1,1 @@
+def solution(x,y,z):a,b,c,d=map(ord,x+y);return(a+b)&1==(c+d)&1>=0<z>=(abs(a-c)!=abs(b-d))*2or x==y

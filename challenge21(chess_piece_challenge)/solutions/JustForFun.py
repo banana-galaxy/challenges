@@ -1,0 +1,1 @@
+def solution(a,b,n):r,u,j,m=map(ord,a+b);return u+r&1==j+m&1>=0<n>=(abs(r-j)!=abs(u-m))*2or a==b

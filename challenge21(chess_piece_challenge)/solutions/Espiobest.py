@@ -1,0 +1,1 @@
+solution=lambda a,b,c:a==b or(k:=ord(a[0])-ord(b[0]))*k-(z:=int(a[1])-int(b[1]))*z==0<c or k+z&1<1<c

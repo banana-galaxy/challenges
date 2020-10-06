@@ -1,0 +1,1 @@
+def solution(x,y,k):s,S,e,E=((int(r,35))for r in x+y);a,b=e-s,E-S;return(a+b)%2<1and(a+b)%2<k>1or(abs(a)==abs(b))==k>0 or x==y

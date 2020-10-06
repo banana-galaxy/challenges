@@ -1,0 +1,1 @@
+solution=lambda a,b,m:1 if a==b else 0 if((a:=(ord(a[0])-96,int(a[1])))[0]+a[1])%2!=((b:=(ord(b[0])-96,int(b[1])))[0]+b[1])%2 else m>=1 if abs(a[0]-b[0])==abs(a[1]-b[1]) else m>=2
